@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 v-show="visible">{{message}}</h1>
+        <h1 v-html='msg'>{{msg}}</h1>
+        <h1 v-if = "value>5">value가 5보다 큽니다</h1>
+        <h1 v-else-if = "value>3">value가 5보다 작고 3보다 크다</h1>
+        <h1 v-else>value가 5보다 큽니다</h1>
+        <ul>
+            <h3 v-for="todo in todos">{{todo.text}}</h3>
+        </ul>
+        <select v-model = 'select'>
+            <option value='all'>전체보기</option>
+            <option value = "complete">완료</option>
+            <option value = "active">아직 안한 것</option>
+        </select>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const app  = new Vue({
+            el:"#app",
+            data:{
+                message:"안녕하세요",
+                msg:"<h3>이거 되나요</h3>",
+                visible:true,
+                value: 10,
+                todos:[
+                    {text:"vue공부하기"},
+                    {text:"django공부하기"}
+                ]
+            }
+        })
+    </script>    
+</body>
+</html>
